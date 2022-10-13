@@ -13,6 +13,9 @@ steps:
     versionSpec: '14.x'
   displayName: 'Install Node.js'
 
+- script: npm install -g @angular/cli
+  displayName: 'angular install'
+  
 - script: npm install -g @ionic/cli
   displayName: 'install ionic cli'
 
