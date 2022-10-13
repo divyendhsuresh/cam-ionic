@@ -16,17 +16,17 @@ steps:
 - script: npm install -g @ionic/cli
   displayName: 'install ionic cli'
 
-- script: npm i -D @capacitor/cli
-  displayName: 'capacitor cli'
+- script: ionic build ios
+  displayName: 'ionic build ios'
 
 - script: npx cap init
   displayName: 'initialising cap'
 
+- script: npm i -D @capacitor/cli
+  displayName: 'capacitor cli'
+
 - script: npm i @capacitor/ios
   displayName: 'install capacitor'
-
-- script: ionic build ios
-  displayName: 'ionic build ios'
 
 - task: CocoaPods@0
   inputs:
