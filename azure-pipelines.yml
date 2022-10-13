@@ -25,13 +25,16 @@ steps:
 - script: npm i @capacitor/ios
   displayName: 'install capacitor'
 
-- script: npx cap sync
-  displayName: 'sync cap '
+- script: ionic build
+  displayName: 'ionic build'
+
+# - script: npx cap sync
+#   displayName: 'sync cap '
 
 
 
-# - script: npx cap add ios
-#   displayName: 'add ios '  
+- script: npx cap add ios
+  displayName: 'add ios '  
 # - task: CocoaPods@0
 #   inputs:
 #     workingDirectory: '$(Build.SourcesDirectory)/ios/App'
