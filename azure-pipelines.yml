@@ -19,8 +19,8 @@ steps:
 - script: npm install -g @ionic/cli
   displayName: 'install ionic cli'
 
-- script: ionic build ios
-  displayName: 'ionic build ios'
+# - script: ionic build ios
+#   displayName: 'ionic build ios'
 
 - script: npx cap init
   displayName: 'initialising cap'
