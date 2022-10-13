@@ -25,10 +25,10 @@ steps:
 
 - script: npx cap add ios
   displayName: 'add ios '  
-- task: CocoaPods@0
-  inputs:
-    workingDirectory: '$(Build.SourcesDirectory)ios/App'
-    forceRepoUpdate: true
+# - task: CocoaPods@0
+#   inputs:
+#     workingDirectory: '$(Build.SourcesDirectory)ios/App'
+#     forceRepoUpdate: true
 - task: Xcode@5
   inputs:
     actions: 'build'
