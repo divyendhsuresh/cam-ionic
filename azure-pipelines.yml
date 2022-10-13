@@ -27,7 +27,7 @@ steps:
 #   displayName: 'add ios '  
 - task: CocoaPods@0
   inputs:
-    workingDirectory: '$(Build.SourcesDirectory)'
+    workingDirectory: '$(Build.SourcesDirectory)ios/App'
     forceRepoUpdate: true
 - task: Xcode@5
   inputs:
@@ -36,7 +36,7 @@ steps:
     sdk: '$(sdk)'
     scheme: '$(scheme)'
     packageApp: true
-    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace' 
+    xcWorkspacePath: 'project.xcworkspace' 
     xcodeVersion: 'default'
 - task: CopyFiles@2
   inputs:
