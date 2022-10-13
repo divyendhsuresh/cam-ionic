@@ -1,0 +1,52 @@
+variables:
+  scheme: 'App'
+  configuration: 'Release'
+  sdk: 'iphoneos'
+
+pool:
+  vmImage: 'macOS-12'
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+- script: npm install -g @ionic/cli
+  displayName: 'install ionic cli'
+
+- script: npm i -D @capacitor/cli
+  displayName: 'capacitor cli'
+
+- script: npx cap init
+  displayName: 'initialising cap'
+
+- script: npm i @capacitor/ios
+  displayName: 'install capacitor'
+
+# - script: npx cap add ios
+#   displayName: 'add ios '  
+- task: CocoaPods@0
+  inputs:
+    workingDirectory: '$(Build.SourcesDirectory)/ios/App'
+    forceRepoUpdate: false
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    configuration: '$(configuration)'
+    sdk: '$(sdk)'
+    scheme: '$(scheme)'
+    packageApp: true
+    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace' 
+    xcodeVersion: 'default'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/*.ipa'
+    TargetFolder: '$(Build.SourcesDirectory)'
+    CleanTargetFolder: true
+    OverWrite: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
