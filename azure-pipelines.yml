@@ -22,8 +22,8 @@ steps:
 # - script: ionic build ios
 #   displayName: 'ionic build ios'
 
-- script: npx cap init
-  displayName: 'initialising cap'
+# - script: npx cap init
+#   displayName: 'initialising cap'
 
 - script: npm i -D @capacitor/cli
   displayName: 'capacitor cli'
