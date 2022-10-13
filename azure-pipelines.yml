@@ -31,14 +31,10 @@ steps:
 - script: npx cap sync
   displayName: 'sync cap '
 
-
-
-# - script: npx cap add ios
-#   displayName: 'add ios '  
-# - task: CocoaPods@0
-#   inputs:
-#     workingDirectory: '$(Build.SourcesDirectory)/ios/App'
-#     forceRepoUpdate: false
+- task: CocoaPods@0
+  inputs:
+    workingDirectory: '$(Build.SourcesDirectory)/ios/App'
+    forceRepoUpdate: false
 
 - task: Xcode@5
   inputs:
@@ -49,6 +45,7 @@ steps:
     packageApp: true 
     xcodeVersion: 'default'
     xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+
 - task: CopyFiles@2
   inputs:
     Contents: '**/*.ipa'
