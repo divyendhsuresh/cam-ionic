@@ -25,8 +25,8 @@ steps:
 - script: npm i @capacitor/ios
   displayName: 'install capacitor'
 
-- script: ionic build
-  displayName: 'ionic build'
+- script: ionic build ios
+  displayName: 'ionic build ios'
 
 - script: npx cap sync
   displayName: 'sync cap '
