@@ -25,8 +25,8 @@ steps:
 # - script: npm i @capacitor/ios
 #   displayName: 'install capacitor'
 
-- script: npx cap add ios
-  displayName: 'add ios '  
+# - script: npx cap add ios
+#   displayName: 'add ios '  
 # - task: CocoaPods@0
 #   inputs:
 #     workingDirectory: '$(Build.SourcesDirectory)/ios/App'
