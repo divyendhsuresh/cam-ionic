@@ -31,13 +31,14 @@ steps:
 - script: npm i @capacitor/ios
   displayName: 'install capacitor'
 
+# - script: npx cap sync
+#   displayName: 'sync cap '
+
 - task: CocoaPods@0
   inputs:
     workingDirectory: '$(Build.SourcesDirectory)/ios/App'
     forceRepoUpdate: false
 
-- script: npx cap sync
-  displayName: 'sync cap '
 - task: Xcode@5
   inputs:
     actions: 'build'
