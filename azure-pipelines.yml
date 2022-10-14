@@ -16,6 +16,9 @@ steps:
 - script: npm install -g @angular/cli
   displayName: 'angular install'
 
+- script: npm i -D @capacitor/cli
+  displayName: 'capacitor cli'
+
 - script: npx cap init
   displayName: 'initialising cap'  
 # - script: npm install -g @ionic/cli
@@ -23,9 +26,6 @@ steps:
 
 - script: npm i @capacitor/ios
   displayName: 'install capacitor'
-
-- script: npm i -D @capacitor/cli
-  displayName: 'capacitor cli'
 
 - script: npx cap sync
   displayName: 'sync cap '
