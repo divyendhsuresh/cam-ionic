@@ -27,11 +27,12 @@ steps:
 - script: npm i @capacitor/ios
   displayName: 'install capacitor'
 
+- script: ionic build ios
+  displayName: 'ionic build ios'
+
 - script: npx cap sync
   displayName: 'sync cap '
 
-- script: ionic build ios
-  displayName: 'ionic build ios'
 
 - task: CocoaPods@0
   inputs:
