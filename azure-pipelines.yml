@@ -31,14 +31,14 @@ steps:
 - script: npm i @capacitor/ios
   displayName: 'adding ios platform'
 
-- script: npx cap add ios
-  displayName: 'adding ios'
+# - script: npx cap add ios
+#   displayName: 'adding ios'
 
-# - script: ionic capacitor build ios
-#   displayName: 'ionic build ios'
+- script: ionic capacitor build ios
+  displayName: 'ionic build ios'
 
-# - script: npx cap sync
-#   displayName: 'sync cap '
+- script: npx cap sync
+  displayName: 'sync cap '
 
 
 - task: CocoaPods@0
