@@ -19,6 +19,9 @@ steps:
 - script: npm install -g @ionic/cli
   displayName: 'install ionic cli'
 
+- script: npm i @capacitor/core
+  displayName: 'capacitor installation'
+
 - script: npm i -D @capacitor/cli
   displayName: 'capacitor cli'
 
