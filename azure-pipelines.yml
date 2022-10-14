@@ -15,24 +15,23 @@ steps:
 
 - script: npm install -g @angular/cli
   displayName: 'angular install'
-  
-- script: npm install -g @ionic/cli
-  displayName: 'install ionic cli'
-
-# - script: ionic build ios
-#   displayName: 'ionic build ios'
-
-- script: npm i -D @capacitor/cli
-  displayName: 'capacitor cli'
 
 - script: npx cap init
-  displayName: 'initialising cap'
+  displayName: 'initialising cap'  
+# - script: npm install -g @ionic/cli
+#   displayName: 'install ionic cli'
 
 - script: npm i @capacitor/ios
   displayName: 'install capacitor'
 
-# - script: npx cap sync
-#   displayName: 'sync cap '
+- script: npm i -D @capacitor/cli
+  displayName: 'capacitor cli'
+
+- script: npx cap sync
+  displayName: 'sync cap '
+
+- script: ionic build ios
+  displayName: 'ionic build ios'
 
 - task: CocoaPods@0
   inputs:
