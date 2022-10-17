@@ -11,7 +11,6 @@ steps:
 
 - task: Npm@1
   inputs:
-    workingDir: '$(Build.SourcesDirectory)'
     command: install
   displayName: 'NPM Install'
 
@@ -19,7 +18,7 @@ steps:
     ionic cap build android --no-open
     npx cap sync
     cd android
-    ./gradlew assemble$(buildConfiguration)
+    ./gradlew assemble assemble Debug
   workingDirectory: $(Build.SourcesDirectory)
   displayName: 'Build Android Project'
  
