@@ -7,8 +7,8 @@ variables:
   projectName: 'SampleApp'
 
 steps:    
-  - script: npm install -g @ionic/cli
-    displayName: 'Install Ionic CLI'
+- script: npm install -g @ionic/cli
+  displayName: 'Install Ionic CLI'
 
 - task: Npm@1
   inputs:
