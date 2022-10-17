@@ -3,7 +3,7 @@ trigger:
 - main
 
 pool:
-  vmImageName: 'windows-latest'
+  vmImage: windows-latest
 
 steps:    
 - script: npm install -g @ionic/cli
